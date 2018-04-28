@@ -34,7 +34,9 @@ object Printable {
 object PrintableSyntax {
   implicit class PrintableOps[A](value: A) {
 
-    // Extension method to automatically format an A to a String
+    // Extension method to automatically format an A to a String.
+    // For any instance `a` of `A` for which we have a `Printable[A]` in scope, we'll be able to write:
+    // `a.format`
     def format(implicit p: Printable[A]): String = p.format(value)
   }
 }

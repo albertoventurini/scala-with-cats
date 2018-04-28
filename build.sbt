@@ -8,6 +8,8 @@ lazy val root = (project in file(".")).
       version      := "0.1.0-SNAPSHOT"
     )),
     name := "ScalaWithCats",
+    scalacOptions += "-Ypartial-unification",
     libraryDependencies += "junit" % "junit" % "4.11" % "test",
-    libraryDependencies += scalaTest % Test
+    libraryDependencies += scalaTest % Test,
+    libraryDependencies += "org.typelevel" %% "cats-core" % "1.1.0"
   )
